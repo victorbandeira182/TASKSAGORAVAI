@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div fxLayout="row">
+  <form [formGroup]="formTask" class="example-form">
+<span class="ui-float-label">
+  <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="task">
+    <label for="float-input">Tarefa</label>
+  </span>
+  </form>
+
+  <div class="addButton">
+  <button pButton type="button" label="ADD" class="ui-button-rounded" (click)="addToTaskList()"></button>
+  </div>
+</div>
+
+<mat-list role="list">
+  <mat-list-item *ngFor="let task of task$ | async " >{{ task.tarefa}}
+    <button mat-icon-button (click)="removeFromTaskList(task)">
+      <mat-icon> delete </mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+<button pButton type="button" label="VOLTAR PARA HOME" class="ui-button-rounded" routerLink="/core/core/home" ></button>
+<p></p>
+

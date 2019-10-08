@@ -1,0 +1,49 @@
+@import '~@angular/material/theming';
+
+footer {
+  background-color: mat-color($mat-blue, 600);
+  padding: 20px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+
+ul, li {
+  text-decoration: none;
+  list-style-type: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+ul > li {
+  margin-right: 2em;
+}
+
+ul > li:last-child {
+  margin-right: 0;
+}
+
+ul > li > a > svg {
+  width: 16px;
+  height: 16px;
+}
+
+ul > li > a > svg {
+  opacity: .5;
+&:hover {
+   opacity: 1;
+ }
+}
+
+}
+
+.footerx {
+  margin-top: 26%;
+  margin-bottom: 2%;
+  margin-right: 1%;
+  font-size: 15px;
+  text-align: justify;
+
+}
+

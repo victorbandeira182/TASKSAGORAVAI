@@ -1,0 +1,53 @@
+h1 {
+  font-family: 'Cormorant Unicase', serif;
+  margin-top: 20%;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Cormorant Unicase', serif;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Cormorant Unicase', serif;
+  text-align: center;
+}
+
+h4 {
+  text-align: justify;
+}
+
+p {
+  font-family: 'Cormorant Unicase', serif;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.text {
+  margin-top: 15%;
+  margin-bottom: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.card {
+  height: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.googleButton {
+  background: #ff2d21;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  margin-top: 3%;
+  max-width: 100%;
+}
+
+
