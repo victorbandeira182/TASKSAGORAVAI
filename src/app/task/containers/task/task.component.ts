@@ -35,21 +35,36 @@ export class TaskComponent implements OnInit {
   public tasks = [];
   formTask = new FormGroup({
     task: new FormControl,
-
+    importancia: new FormControl,
+    datainicio: new FormControl,
+    datafinal: new FormControl,
   });
 
 
   task$: Observable<Task[]>;
+  importancia$: Observable<Task[]>;
+  datainicio$: Observable<Task[]>;
+  datafinal$: Observable<Task[]>;
+
 
 
   ngOnInit() {
     this.task$ = this.store.pipe(select(getAllTasks));
+    this.importancia$ = this.store.pipe(select(getAllTasks));
+    this.datainicio$ = this.store.pipe(select(getAllTasks));
+    this.datafinal$ = this.store.pipe(select(getAllTasks));
     this.store.dispatch(new GetTaskAction());
   }
 
   addToTaskList() {
     const task = {
       tarefa: this.formTask.get('task').value,
+      importancia: this.formTask.get('importancia').value,
+      datainicio: this.formTask.get('datainicio').value,
+      datafinal: this.formTask.get('datafinal').value,
+
+
+
     };
     this.store.dispatch(new CreateTaskAction(task));
   }

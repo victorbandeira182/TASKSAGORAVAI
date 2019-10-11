@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { TaskReducer } from './store/reducers/task.reducer';
 import {EffectsModule} from '@ngrx/effects';
 import {TaskEffects} from './store/effects/task.effect';
+import {MatAutocompleteModule} from "@angular/material";
 
 
 
@@ -21,7 +22,7 @@ import {TaskEffects} from './store/effects/task.effect';
     CoreModule,
     StoreModule.forFeature('Task', TaskReducer),
     EffectsModule.forFeature([TaskEffects]),
-
+    MatAutocompleteModule,
 
 
   ]

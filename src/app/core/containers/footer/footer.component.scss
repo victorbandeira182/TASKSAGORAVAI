@@ -7,6 +7,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-shrink: 0;
+  bottom: 0px;
 
 ul, li {
   text-decoration: none;
@@ -39,12 +40,13 @@ ul > li > a > svg {
 }
 
 .footerx {
-  margin-top: 27%;
-  margin-bottom: 2%;
+  margin-top: 0%;
+  margin-bottom: 0%;
   margin-right: 0%;
   font-size: 15px;
   text-align: justify;
-  bottom: 0;
+  position: relative;
   left:0;
+  min-width: 100%;
 
 }

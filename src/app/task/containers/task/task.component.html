@@ -1,9 +1,38 @@
 <app-navbar></app-navbar>
+<mat-card class="numeroTarefas">
+  Número de Tarefas: {{ (task$ | async).length }}
+</mat-card>
+<p>
+</p>
+<p>
+
+</p>
 <div fxLayout="row">
-  <form [formGroup]="formTask" class="example-form">
+  <form [formGroup]="formTask" class="tarefaForm">
 <span class="ui-float-label">
   <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="task">
     <label for="float-input">Tarefa</label>
+  </span>
+  </form>
+
+  <form [formGroup]="formTask" class="importanciaForm">
+<span class="ui-float-label">
+  <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="importancia">
+    <label for="float-input">Importância</label>
+  </span>
+  </form>
+
+  <form [formGroup]="formTask" class="datainicialForm">
+<span class="ui-float-label">
+  <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="datainicio">
+    <label for="float-input">Data Inicial</label>
+  </span>
+  </form>
+
+  <form [formGroup]="formTask" class="datafinalForm">
+<span class="ui-float-label">
+  <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="datafinal">
+    <label for="float-input">Data Final</label>
   </span>
   </form>
 
@@ -12,13 +41,22 @@
   </div>
 </div>
 
+
 <mat-list role="list">
-  <mat-list-item *ngFor="let task of task$ | async " >{{ task.tarefa}}
+  <mat-list-item  *ngFor="let task of task$ | async " >
+     <p-card>
+     TAREFA: {{ task.tarefa}} ---
+     IMPORTÂNCIA: {{ task.importancia}} ---
+     DATA INICIAL: {{ task.datainicio}} ---
+     DATA FINAL: {{ task.datafinal}}
+   </p-card>
     <button mat-icon-button (click)="removeFromTaskList(task)">
       <mat-icon> delete </mat-icon>
     </button>
   </mat-list-item>
-  <button pButton type="button" label="VOLTAR PARA HOME" class="ui-button-rounded"  routerLink="/core/core/home" ></button>
-
 </mat-list>
+
+<div class="voltarhome">
+  <button pButton type="button" label="VOLTAR PARA HOME" class="ui-button-rounded"  routerLink="/core/core/home" ></button>
+</div>
 
