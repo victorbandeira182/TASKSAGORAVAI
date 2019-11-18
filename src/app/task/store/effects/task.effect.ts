@@ -19,8 +19,7 @@ import {
   DeleteTaskFailAction,
 
   GET_TASK,
-  CREATE_TASK,
-  DELETE_TASK,
+  CREATE_TASK,DELETE_TASK,
 } from '../actions/task.actions';
 
 import {Actions, Effect, ofType} from '@ngrx/effects';

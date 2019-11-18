@@ -26,6 +26,8 @@
     "@ngrx/effects": "^8.3.0",
     "@ngrx/store": "^8.3.0",
     "@ngrx/store-devtools": "^8.3.0",
+    "angular-input-masks": "^4.4.1",
+    "angular2-text-mask": "^9.0.0",
     "chart.js": "^2.8.0",
     "firebase": "^6.6.0",
     "primeicons": "^2.0.0",

@@ -1,62 +1,49 @@
 <app-navbar></app-navbar>
 <mat-card class="numeroTarefas">
-  Número de Tarefas: {{ (task$ | async).length }}
+	Número de Clientes: {{ (task$ | async).length }}
 </mat-card>
-<p>
-</p>
-<p>
 
-</p>
-<div fxLayout="row">
-  <form [formGroup]="formTask" class="tarefaForm">
+<mat-card>
+	<div fxLayout="row">
+		<form [formGroup]="formTask" class="tarefaForm">
 <span class="ui-float-label">
   <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="task">
-    <label for="float-input">Tarefa</label>
-  </span>
-  </form>
+    <label for="float-input">Nome</label>
+  </span>.
+		</form>
 
-  <form [formGroup]="formTask" class="importanciaForm">
+		<form [formGroup]="formTask" class="importanciaForm">
 <span class="ui-float-label">
-  <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="importancia">
-    <label for="float-input">Importância</label>
+  <input class="formInput" id="float-input" type="text" [textMask]="{mask: phoneMask}"   size="30" pInputText formControlName="importancia">
+    <label for="float-input">Telefone</label>
   </span>
-  </form>
+		</form>
 
-  <form [formGroup]="formTask" class="datainicialForm">
-<span class="ui-float-label">
-  <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="datainicio">
-    <label for="float-input">Data Inicial</label>
-  </span>
-  </form>
-
-  <form [formGroup]="formTask" class="datafinalForm">
-<span class="ui-float-label">
-  <input class="formInput" id="float-input" type="text" size="30" pInputText formControlName="datafinal">
-    <label for="float-input">Data Final</label>
-  </span>
-  </form>
-
-  <div class="addButton">
-  <button pButton type="button" label="ADD" class="ui-button-rounded" (click)="addToTaskList()"></button>
-  </div>
-</div>
+		<div class="addButton">
+			<button pButton type="button" label="ADD" class="ui-button-rounded" (click)="addToTaskList()"></button>
+		</div>
+	</div>
+</mat-card>
 
 
 <mat-list role="list">
-  <mat-list-item  *ngFor="let task of task$ | async " >
-     <p-card>
-     TAREFA: {{ task.tarefa}} ---
-     IMPORTÂNCIA: {{ task.importancia}} ---
-     DATA INICIAL: {{ task.datainicio}} ---
-     DATA FINAL: {{ task.datafinal}}
-   </p-card>
-    <button mat-icon-button (click)="removeFromTaskList(task)">
-      <mat-icon> delete </mat-icon>
-    </button>
-  </mat-list-item>
+	<mat-list-item *ngFor="let task of task$ | async ">
+		<mat-card>
+			Nome: {{ task.tarefa}} ---
+			Telefone: {{ task.importancia}}
+		</mat-card>
+		<button mat-icon-button (click)="removeFromTaskList(task)">
+			<mat-icon> delete</mat-icon>
+		</button>
+	</mat-list-item>
 </mat-list>
 
 <div class="voltarhome">
-  <button pButton type="button" label="VOLTAR PARA HOME" class="ui-button-rounded"  routerLink="/core/core/home" ></button>
+	<button pButton type="button" label="VOLTAR PARA HOME" class="ui-button-rounded" routerLink="/core/core/home"></button>
 </div>
+
+
+
+
+
 

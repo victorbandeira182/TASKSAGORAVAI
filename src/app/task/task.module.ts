@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {TextMaskModule} from 'angular2-text-mask';
 import {TaskComponent} from './containers/task/task.component';
 import {SharedModule} from '../core/shared/shared.module';
 import {TaskRoutingModule} from './task-routing.module';
@@ -15,16 +16,17 @@ import {MatAutocompleteModule} from "@angular/material";
 
 @NgModule({
   declarations: [TaskComponent,],
-  imports: [
-    CommonModule,
-    SharedModule,
-    TaskRoutingModule,
-    CoreModule,
-    StoreModule.forFeature('Task', TaskReducer),
-    EffectsModule.forFeature([TaskEffects]),
-    MatAutocompleteModule,
+	imports: [
+		CommonModule,
+		SharedModule,
+		TaskRoutingModule,
+		CoreModule,
+		StoreModule.forFeature('Task', TaskReducer),
+		EffectsModule.forFeature([TaskEffects]),
+		MatAutocompleteModule,
+		TextMaskModule,
 
 
-  ]
+	]
 })
 export class TaskModule { }

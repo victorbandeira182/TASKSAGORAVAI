@@ -32,7 +32,6 @@ export class AuthService {
   signinWithGoogle() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
       .then(() => {
-        console.log('Login Efetuado com Sucesso!');
         this.zone.run(() => {
           this.router.navigate(['/core/tasks']);
         });

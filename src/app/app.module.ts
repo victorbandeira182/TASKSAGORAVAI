@@ -23,6 +23,8 @@ import { TaskModule } from './task/task.module';
 import {EffectsModule} from '@ngrx/effects';
 import {TaskEffects} from './task/store/effects/task.effect';
 import {CoreModule} from './core/core.module';
+import { TextMaskModule } from 'angular2-text-mask';
+
 
 
 
@@ -47,6 +49,7 @@ import {CoreModule} from './core/core.module';
     EffectsModule.forRoot([TaskEffects]),
     StoreDevtoolsModule.instrument({maxAge: 25}),
     CoreModule,
+	  TextMaskModule
 
 
   ],
