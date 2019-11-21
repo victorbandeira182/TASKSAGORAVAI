@@ -63,6 +63,7 @@ export class TaskComponent implements OnInit {
     this.store.dispatch(new CreateTaskAction(task));
   }
 
+
   removeFromTaskList(task: Task) {
     this.store.dispatch(new DeleteTaskAction(task));
   }

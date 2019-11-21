@@ -15,7 +15,10 @@ import {MatAutocompleteModule} from "@angular/material";
 
 
 @NgModule({
-  declarations: [TaskComponent,],
+	declarations: [TaskComponent,],
+	exports: [
+		TaskComponent
+	],
 	imports: [
 		CommonModule,
 		SharedModule,
